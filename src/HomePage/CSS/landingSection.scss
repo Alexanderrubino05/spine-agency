@@ -1,0 +1,119 @@
+:root {
+	--blur-size: 30px;
+	--shape-1-size: 320px;
+	--shape-3-size: 280px;
+	--shapes-opacity: 50%;
+}
+
+
+#landingSection {
+	position: relative;
+  height: 70vh;
+  display: grid;
+	grid-template-rows: 1fr 100px;
+	padding-bottom: 40px;
+}
+
+.huge-headline {
+  font-size: max(5.3vw, 34px);
+}
+
+.gray-headline {
+  color: var(--secondary);
+  font-family: customItalic;
+}
+
+.headline-div {
+	transform: translateX(40px);
+  opacity: 0;	
+}
+
+.mouse {
+	justify-self: center;
+	position: relative;
+	width: 30px;
+	height: 65px;
+	border: 3px solid #333;
+	border-radius: 60px;
+  margin-bottom: 40px;
+	&::before {
+		content: '';
+		width: 12px;
+		height: 12px;
+		position: absolute;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: var(--primary);
+		border-radius: 50%;
+		opacity: 1;
+		animation: wheel 2s infinite;
+	}
+}
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 70%;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 70%;
+	}
+}
+
+.shape-1, .shape-2 {
+	width: 26vw;
+	height: 26vw;
+	border-radius: 50%;
+	position: absolute;
+	filter: blur(80px);
+	opacity: 20%;
+}
+
+.shape-1 {
+	background-color: var(--primary);
+	right: 5%;
+	bottom: 5%;
+	animation: blob ease-in-out 8s infinite;
+}
+
+.shape-2 {
+	background-color: rgb(111, 2, 130);
+	right: 20%;
+	bottom: 40%;
+	animation: blob2 ease-in-out 8s infinite;
+}
+
+@keyframes blob {
+	0% {
+		transform: translate(0px, 0px) scale(1);
+}
+33% {
+		transform: translate(-200px, -200px) scale(1.1);
+}
+66% {
+		transform: translate(-120px, -120px) scale(0.9);
+}
+100% {
+		transform: translate(0px, 0px) scale(1);
+}
+}
+
+@keyframes blob2 {
+	0% {
+			transform: translate(0px, 0px) scale(1);
+	}
+	33% {
+			transform: translate(200px, 200px) scale(1.1);
+	}
+	66% {
+			transform: translate(120px, 120px) scale(0.9);
+	}
+	100% {
+			transform: translate(0px, 0px) scale(1);
+	}
+}

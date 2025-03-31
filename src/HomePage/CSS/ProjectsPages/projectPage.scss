@@ -1,0 +1,111 @@
+#project-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+  gap: 20px;
+
+  .description-text {
+    width: 50%;
+  }
+
+  .project-content-div {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-bottom: 80px;
+  }
+
+  .project-text-div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  .project-headline-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    overflow: hidden;
+
+    .project-headline {
+      text-align: center;
+      transform: translateY(100px);
+    }
+  }
+}
+
+.project-info-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    font-size: 20px;
+    text-decoration: underline;
+    -webkit-transition: color .3s ease-out;
+    -moz-transition: color .3s ease-out;
+    -ms-transition: color .3s ease-out;
+    -o-transition: color .3s ease-out;
+    transition: color .3s ease-out;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+.cover-img-div {
+  position: relative;
+}
+
+.cover-img {
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.buble-text {
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 1px solid white;
+  width: fit-content;
+  border-radius: 40px;
+  padding: 12px 20px 12px 20px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-transition: transform .3s ease-out;
+  -moz-transition: transform .3s ease-out;
+  -ms-transition: transform .3s ease-out;
+  -o-transition: transform .3s ease-out;
+  transition: transform .3s ease-out;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+.project-img-container {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+
+  .project-img-cover {
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+}

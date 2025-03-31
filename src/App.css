@@ -1,0 +1,117 @@
+@font-face {
+  font-family: customBold;
+  src: url(./assets/fonts/Zodiak-Bold.woff2);
+}
+@font-face {
+  font-family: customItalic;
+  src: url(./assets/fonts/Zodiak-Italic.woff2);
+}
+@font-face {
+  font-family: customRegular;
+  src: url(./assets/fonts/Zodiak-Regular.woff);
+}
+
+:root {
+  --primary: #03c19c;
+  --secondary: #929395;
+  --darkGray: #202020;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: customRegular;
+  background-color: #111;
+  color: #fff;
+}
+
+#overall-div {
+  padding: 200px 0px 0 0px;
+  overflow: hidden;
+}
+
+.spacing-div {
+  padding: 0 7% 0 7%;
+}
+
+/* Cursor */
+.cursorCircle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  mix-blend-mode: difference;
+
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.cursor-no-svg svg {
+  display: none;
+}
+.enlarge-cursor {
+  width: 80px;
+  height: 80px;
+}
+.cursor-left-arrow-svg svg {
+  transform: rotate(180deg);
+}
+.cursor-right-up-arrow-svg svg {
+  transform: rotate(-40deg);
+}
+
+/* Framer Transition */
+.slide-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--primary);
+  z-index: 9999;
+}
+
+.slide-in {
+  transform-origin: bottom;
+}
+
+.slide-out {
+  transform-origin: top;
+}
+
+
+/* Link  */
+a { 
+  text-decoration: none;
+  color: white;
+  height: fit-content;
+}
+
+
+@media (pointer: coarse) {
+  /* Rules for devices with mouse here */
+  .cursorCircle {
+    display: none;
+  }
+}
